@@ -1,0 +1,7 @@
+1.javascript 六种数据类型
+		  object ---对象: {Function Array Date}
+原始类型：number
+		  string
+		  boolean
+		  null
+		  undefined
