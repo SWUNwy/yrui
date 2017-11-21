@@ -1,0 +1,16 @@
+注释与变量输出
+1.养成良好的注释习惯
+	{*这里是注释语句*}
+2.如何在Smarty中输出赋值的变量
+	（1.变量是字符串、变量是数组的情况
+	（2.变量是类的情况
+3.变量调节器
+	1.首字母大写 capitalize
+	示例：{$articleTitle|capitalize}
+	2.字符串链接 cat
+	示例：{$articleTitle|cat:"yesterday"}
+	3.日期格式化 date_format
+	示例：{$yesterday|date_format}
+		  {$yesterday|date_format:":"%A,%B,%e,%Y %H:%M:%S}
+  	4.为未赋值或为空的变量指定默认值default
+  	示例：{$articleTitle|default:"no title"}
