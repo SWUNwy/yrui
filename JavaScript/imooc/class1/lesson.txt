@@ -5,3 +5,30 @@
 		  boolean
 		  null
 		  undefined
+2.隐式转换
+ var x = 'The answer is ' + 3;
+ var y = 42 + 'is the answer';
+ 巧用+/-规则转换变量类型
+ 例：如果想要将一个变量转换为数字，则可以 num-0;
+ 	 如果想要将一个变量转换为字符串，则可以 num+""
+
+ '1.23' == 1.23
+ 0 == false
+ null == undefined
+ new Object() == new Object()
+ [1,2] == [1,2]
+ 严格等于 ===
+ 如果两边类型不同，则返回false
+ 类型相同：
+ 			null === null
+ 			undefined === undefined
+ 			NaN ≠ NaN
+3.JavaScript包装对象
+4.类型检测
+typeof
+instanceof
+Object.prototype.toString
+constructor
+duck type
+
+
