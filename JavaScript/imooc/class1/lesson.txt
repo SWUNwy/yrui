@@ -30,5 +30,11 @@ instanceof
 Object.prototype.toString
 constructor
 duck type
-
+5.表达式
+表达式是指能计算出值的任何可用程序单元。	___wiki
+表达式是一种JS短语，可使JS解释器用来产生一个值。 ___《JS权威指南》
+	原始表达式 常亮、直接量 3.14 "JavaScript"
+				关键字 null this true
+				变量 a,b,c
+				
 
