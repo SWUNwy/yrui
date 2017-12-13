@@ -1,0 +1,5 @@
+Ajax
+AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+应用场景：无刷新分页、无刷新获取、无刷新提交、无刷新搜索等
+实现原理
+发起请求->ajax处理->接收结果
