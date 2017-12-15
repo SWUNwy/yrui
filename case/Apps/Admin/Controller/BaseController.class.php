@@ -4,9 +4,16 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class BaseContrller extends Controller {
+class BaseController extends Controller {
 
-	public function _initialize() {
-		$this->redriect('Login/index');
+	protected function _initialize() {
+		$auth = new \Think\Auth();
+		// $rule_name=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
+		// if (!$auth->check($rule_name,$session_auth['uname']['uid'])) {
+		// 	$this->error('no Access',U('Login/index'));
+		// }
+		if (!$auth->check()) {
+			die("not Allow!");
+		}
 	}
 }

@@ -4,13 +4,13 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
 
     public function index() {
 
-        $usernamae =  M('user')->where(['id'=>session('admin_id')])->getField('uname');
-        $this->assign('user_id',session('admin_id'));
-        $this->assign('username',$usernamae);
+        // $usernamae =  M('user')->where(['id'=>session('admin_id')])->getField('uname');
+        // $this->assign('user_id',session('admin_id'));
+        // $this->assign('username',$usernamae);
         $this->display();
     }
 
