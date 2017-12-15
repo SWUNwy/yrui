@@ -1,0 +1,54 @@
+<extend name="Common/meta" />
+<block name="body">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>资讯详情</h5>
+                <div class="ibox-tools">
+                    <button type="button" class="btn btn-outline btn-primary btn-xs" onclick="history.back(-1);">返回</button>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <table class="table table-bordered" style="width: 80%;margin: auto;">
+                    <thead>
+                        <tr>
+                            <th colspan="2"  style="text-align: center;">资讯{$news.theme}基本信息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>主题</th>
+                        <td>{$news.theme}</td>
+                    </tr>
+                    <tr>
+                        <th>内容</th>
+                        <td>{$news.content}</td>
+                    </tr>
+                    <tr>
+                        <th>资讯简介</th>
+                        <td>{$news.introduction}</td>
+                    </tr>
+                    <tr>
+                        <th>发布者</th>
+                        <td>{$news.user}</td>
+                    </tr>
+                    <tr>
+                        <th>联系方式</th>
+                        <td>{$news.email}</td>
+                    </tr>
+                    <tr>
+                        <th>发布时间</th>
+                        <td>{$news.add_time}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</block>
+<script>
+    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+</script>
+<!-- <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script> -->
