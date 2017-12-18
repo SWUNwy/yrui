@@ -21,10 +21,27 @@ class LoginController extends Controller {
     }
 
     public function login() {
-        if ($IS_POST) {
+        if ($_POST) {
             $user = M('user')->where(array('uname' => I('uname','','htmlspecialchars')))->find();
+            // p($user);
+            // die();
+            if ($user) {
+                if ($user['status'] == 0) {
+                    $this->error('登录失败,用户被禁用!',U('Login/index'));
+                } else {
+                    $data = array(
+                        'last_time' => date('Y-m-d H:i:s'),
+                        'last_ip' => get_client_ip()
+                    );
+                    $db = M('user')->where('id='.$user['id'])->save($data);
+                    session('id',$user['id']);
+                    session('uname',$user['uname']);
+                    $this->success("登录成功!",U('Index/index'));                    
+                }
+            } else {
+                $this->error('用户不存在!');
+            }
         }
-        $this->success("登录成功!",U('Index/index'));
     }
     
     // public function login() {
