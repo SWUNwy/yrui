@@ -33,8 +33,8 @@ class LoginController extends Controller {
                         'last_time' => date('Y-m-d H:i:s'),
                         'last_ip' => get_client_ip()
                     );
-                    $db = M('user')->where('id='.$user['id'])->save($data);
-                    session('id',$user['id']);
+                    $db = M('user')->where('uid='.$user['uid'])->save($data);
+                    session('uid',$user['uid']);
                     session('uname',$user['uname']);
                     $this->success("登录成功!",U('Index/index'));                    
                 }

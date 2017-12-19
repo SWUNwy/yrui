@@ -7,14 +7,18 @@ use Think\Controller;
 class BaseController extends Controller {
 
 	protected function _initialize() {
-		$uid = session('id');
+		$uid = session('uid');
+		if (!$uid) {
+			$this->error('非法操作!',U('Login/index'));
+		}
+		if ($uid == 1) {
+			return true;
+		}
 		$auth = new \Think\Auth();
-		// $rule_name=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
-		// if (!$auth->check($rule_name,$session_auth['uname']['uid'])) {
-		// 	$this->error('no Access',U('Login/index'));
-		// }
-		if (!$auth->check()) {
-			die("not Allow!");
+		$rule_name = MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
+		$result = $auth->check($rule_name,$uid);
+		if (!$result) {
+			$this->error('no Access',U('Login/index'));
 		}
 	}
 }
