@@ -7,8 +7,8 @@ use Think\Controller;
 class BaseController extends Controller {
 
 	protected function _initialize() {
-		$uid = session('uid');
-		if (!$uid) {
+		$uid = $_SESSION['uid'];
+		if (!isset($uid) || $uid == '') {
 			$this->error('非法操作!',U('Login/index'));
 		}
 		if ($uid == 1) {

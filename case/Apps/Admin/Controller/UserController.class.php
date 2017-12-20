@@ -27,7 +27,7 @@ class UserController extends Controller {
 	public function add() {
 		$data = array(
 			'uname'			=> I('uname'),
-			'pwd'			=> I('pwd'),
+			'pwd'			=> md5(I('pwd')),
 			'status'		=> I('status'),
 			'role_id'		=> I('role_id'),
 			'create_time'	=> date('Y-m-d H:i:s'),
@@ -63,7 +63,7 @@ class UserController extends Controller {
 		$id = I('id');
 		$data = array(
 			'uname'		=> I('uname'),
-			'pwd'		=> I('pwd'),
+			'pwd'		=> md5(I('pwd')),
 			'status'	=> I('status'),
 			'role_id'	=> I('role_id'),
 			'last_time'	=> date('Y-m-d H:i:s'),

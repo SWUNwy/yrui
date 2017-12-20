@@ -22,7 +22,11 @@ class LoginController extends Controller {
 
     public function login() {
         if ($_POST) {
-            $user = M('user')->where(array('uname' => I('uname','','htmlspecialchars')))->find();
+            $field = array(
+                'uname' => I('uname','','htmlspecialchars'),
+                'pwd' => md5(I('pwd'))
+            );
+            $user = M('user')->where($field)->find();
             // p($user);
             // die();
             if ($user) {
@@ -33,8 +37,8 @@ class LoginController extends Controller {
                         'last_time' => date('Y-m-d H:i:s'),
                         'last_ip' => get_client_ip()
                     );
-                    $db = M('user')->where('uid='.$user['uid'])->save($data);
-                    session('uid',$user['uid']);
+                    $db = M('user')->where('id='.$user['id'])->save($data);
+                    session('uid',$user['id']);
                     session('uname',$user['uname']);
                     $this->success("登录成功!",U('Index/index'));                    
                 }
