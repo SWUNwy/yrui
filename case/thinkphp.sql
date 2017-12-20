@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-12-20 17:02:09
+Date: 2017-12-20 17:22:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `yr_auth_group` (
 -- ----------------------------
 -- Records of yr_auth_group
 -- ----------------------------
-INSERT INTO `yr_auth_group` VALUES ('1', '默认管理组', '1', '1,2,3,4');
+INSERT INTO `yr_auth_group` VALUES ('1', '默认管理组', '1', '1,2,3,4,5,6');
 INSERT INTO `yr_auth_group` VALUES ('2', '一般管理员', '1', '1,2');
 INSERT INTO `yr_auth_group` VALUES ('3', '测试组', '1', '1');
 
@@ -66,7 +66,7 @@ CREATE TABLE `yr_auth_rule` (
   `condition` char(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of yr_auth_rule
@@ -74,7 +74,9 @@ CREATE TABLE `yr_auth_rule` (
 INSERT INTO `yr_auth_rule` VALUES ('1', 'Admin/Index/index', '后台首页控制器', '1', '1', '');
 INSERT INTO `yr_auth_rule` VALUES ('2', 'Admin/Index/main', '后台系统数据', '1', '1', '');
 INSERT INTO `yr_auth_rule` VALUES ('3', 'Admin/User/index', '管理员列表', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/add', '添加管理员', '1', '1', '');
+INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/addUser', '添加管理员', '1', '1', '');
+INSERT INTO `yr_auth_rule` VALUES ('5', 'Admin/Role/index', '角色管理', '1', '1', '');
+INSERT INTO `yr_auth_rule` VALUES ('6', 'Admin/Auth/index', '权限列表', '1', '1', '');
 
 -- ----------------------------
 -- Table structure for `yr_blog`
@@ -270,14 +272,14 @@ CREATE TABLE `yr_user` (
   `create_time` datetime DEFAULT NULL,
   `last_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of yr_user
 -- ----------------------------
-INSERT INTO `yr_user` VALUES ('1', 'yrui', '4ca3c2def8fdf3a054fc405e0f3b3f78', '1', '0.0.0.0', '2017-12-10 00:00:00', '2017-12-20 16:13:10');
-INSERT INTO `yr_user` VALUES ('5', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '0.0.0.0', '2017-12-19 15:13:06', '2017-12-20 16:57:41');
-INSERT INTO `yr_user` VALUES ('7', 'test', '098f6bcd4621d373cade4e832627b4f6', '1', '0.0.0.0', '2017-12-20 16:11:13', '2017-12-20 16:57:51');
+INSERT INTO `yr_user` VALUES ('1', 'yrui', '4ca3c2def8fdf3a054fc405e0f3b3f78', '1', '0.0.0.0', '2017-12-10 00:00:00', '2017-12-20 17:18:26');
+INSERT INTO `yr_user` VALUES ('5', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '0.0.0.0', '2017-12-19 15:13:06', '2017-12-20 17:19:30');
+INSERT INTO `yr_user` VALUES ('7', 'test', '098f6bcd4621d373cade4e832627b4f6', '1', '0.0.0.0', '2017-12-20 16:11:13', '2017-12-20 17:18:47');
 
 -- ----------------------------
 -- Table structure for `yr_visit`

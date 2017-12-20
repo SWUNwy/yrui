@@ -61,7 +61,6 @@
                         </a>
                     </li>
 
-                    <?php if(in_array('23',$auth)||$auth==''){ ?>
                     <li>
                         <a href="#user">
                             <i class="fa fa-user" style="font-size: 17px;"></i>
@@ -69,22 +68,16 @@
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <?php if(in_array('24',$auth)||$auth==''){ ?>
                             <li>
                                 <a class="J_menuItem" href="<?php echo U('User/addUser');?>">新增管理员</a>
                             </li>
-                            <?php } ?>
 
-                            <?php if(in_array('25',$auth)||$auth==''){ ?>
                             <li>
                                 <a class="J_menuItem" href=<?php echo U('User/index');?>">管理员列表</a>
                             </li>
-                            <?php } ?>
                         </ul>
                     </li>
-                    <?php } ?>
 
-                    <?php if(in_array('26',$auth)||$auth==''){ ?>
                     <li>
                         <a href="##unlock-alt">
                             <i class="fa fa-unlock-alt" style="font-size: 18px;"></i>
@@ -92,20 +85,15 @@
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <?php if(in_array('27',$auth)||$auth==''){ ?>
                             <li>
                                 <a class="J_menuItem" href="<?php echo U('Role/index');?>">角色管理</a>
                             </li>
-                            <?php } ?>
 
-                            <?php if(in_array('28',$auth)||$auth==''){ ?>
                             <li>
                                 <a class="J_menuItem" href="<?php echo U('Auth/index');?>">权限列表</a>
                             </li>
-                            <?php } ?>
                         </ul>
                     </li>
-                    <?php } ?>
 
                 </ul>
             </div>
