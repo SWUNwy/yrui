@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-12-21 14:12:15
+Date: 2017-12-21 14:26:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -73,12 +73,12 @@ CREATE TABLE `yr_auth_rule` (
 -- ----------------------------
 -- Records of yr_auth_rule
 -- ----------------------------
-INSERT INTO `yr_auth_rule` VALUES ('1', 'Admin/Index/index', '后台首页控制器', '1', '1', '', null, null);
-INSERT INTO `yr_auth_rule` VALUES ('2', 'Admin/Index/main', '后台系统数据', '1', '1', '', null, null);
-INSERT INTO `yr_auth_rule` VALUES ('3', 'Admin/User/index', '管理员列表', '1', '1', '', null, null);
-INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/addUser', '添加管理员', '1', '1', '', null, null);
-INSERT INTO `yr_auth_rule` VALUES ('5', 'Admin/Role/index', '角色管理', '1', '1', '', null, null);
-INSERT INTO `yr_auth_rule` VALUES ('6', 'Admin/Auth/index', '权限列表', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('1', 'Admin/Index/index', '后台首页控制器', '1', '1', '', '2017-12-21 14:24:41', '2017-12-21 14:24:59');
+INSERT INTO `yr_auth_rule` VALUES ('2', 'Admin/Index/main', '后台系统数据', '1', '1', '', '2017-12-21 14:24:43', '2017-12-21 14:25:01');
+INSERT INTO `yr_auth_rule` VALUES ('3', 'Admin/User/index', '管理员列表', '1', '1', '', '2017-12-21 14:24:46', '2017-12-21 14:25:03');
+INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/addUser', '添加管理员', '1', '1', '', '2017-12-21 14:24:48', '2017-12-21 14:25:06');
+INSERT INTO `yr_auth_rule` VALUES ('5', 'Admin/Role/index', '角色管理', '1', '1', '', '2017-12-21 14:24:51', '2017-12-21 14:25:09');
+INSERT INTO `yr_auth_rule` VALUES ('6', 'Admin/Auth/index', '权限列表', '1', '1', '', '2017-12-21 14:24:55', '2017-12-21 14:25:11');
 
 -- ----------------------------
 -- Table structure for `yr_blog`
@@ -279,7 +279,7 @@ CREATE TABLE `yr_user` (
 -- ----------------------------
 -- Records of yr_user
 -- ----------------------------
-INSERT INTO `yr_user` VALUES ('1', 'yrui', '4ca3c2def8fdf3a054fc405e0f3b3f78', '1', '0.0.0.0', '2017-12-10 00:00:00', '2017-12-20 17:18:26');
+INSERT INTO `yr_user` VALUES ('1', 'yrui', '4ca3c2def8fdf3a054fc405e0f3b3f78', '1', '0.0.0.0', '2017-12-10 00:00:00', '2017-12-21 14:16:46');
 INSERT INTO `yr_user` VALUES ('5', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '0.0.0.0', '2017-12-19 15:13:06', '2017-12-20 17:19:30');
 INSERT INTO `yr_user` VALUES ('7', 'test', '098f6bcd4621d373cade4e832627b4f6', '1', '0.0.0.0', '2017-12-20 16:11:13', '2017-12-20 17:18:47');
 

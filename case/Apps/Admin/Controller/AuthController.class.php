@@ -15,7 +15,7 @@ class AuthController extends Controller {
         import('Org.Util.Page');
         $count = $rule->count();
         $page = new \Think\Page($count,10);
-        $show = $page->show()
+        $show = $page->show();
         $list = $rule->order('last_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('list',$list);
         $this->assign('page',$page);

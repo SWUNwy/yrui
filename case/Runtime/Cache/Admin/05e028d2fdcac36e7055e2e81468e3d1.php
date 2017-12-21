@@ -56,12 +56,6 @@
                                 <button class="btn btn-primary btn-sm" type="button"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;添加权限</button>
                             </a>
                         </div>
-<!--                        <div class="col-sm-3" style="float: right;">
-                            <div class="input-group">
-                                <input type="text" placeholder="请输入权限名称" class="input-sm form-control"> <span class="input-group-btn">
-                                <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
-                            </div>
-                        </div>-->
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -69,7 +63,6 @@
                             <tr>
                                 <!--<th></th>-->
                                 <th>ID</th>
-                                <th>排序</th>
                                 <th>权限名称</th>
                                 <th>控制器方法</th>
                                 <th>状态</th>
@@ -79,36 +72,33 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php if(is_array($authlist)): $i = 0; $__LIST__ = $authlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$authlist): $mod = ($i % 2 );++$i;?><tr>
+                            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?><tr>
                                     <!--<td>
                                         <input type="checkbox" class="i-checks" name="id[]" value="<?php echo ($authlist["id"]); ?>">
                                     </td>-->
-                                    <td><?php echo ($authlist["id"]); ?></td>
-                                    <td><?php echo ($authlist["sort"]); ?></td>
+                                    <td><?php echo ($list["id"]); ?></td>
                                     <td>
-                                        <?php echo ($authlist["level"]); echo ($authlist["name"]); ?>
+                                        <?php echo ($list["title"]); ?>
                                     </td>
                                     <td>
-                                        <?php echo ($authlist["path"]); ?>
+                                        <?php echo ($list["name"]); ?>
                                     </td>
                                     <td>
-                                        <?php if(($authlist["status"] == 0)): ?><span style="color: green;">启用</span><?php endif; ?>
-                                        <?php if(($authlist["status"] == 1)): ?><span style="color: red;">禁用</span><?php endif; ?>
+                                        <?php if(($list["status"] == 1)): ?><span style="color: green;">启用</span><?php endif; ?>
+                                        <?php if(($list["status"] == 0)): ?><span style="color: red;">禁用</span><?php endif; ?>
                                     </td>
                                     <td>
-                                        <?php echo (date("Y-m-d H:i:s",$authlist["create_time"])); ?>
+                                        <?php echo ($list["add_time"]); ?>
                                     </td>
                                     <td>
-                                        <?php if(($authlist['update_time'] == '')): ?>暂无记录
+                                        <?php echo ($list["last_time"]); ?>
+                                    </td>
+                                    <td>
+                                        <?php if($list['status'] == 1): ?><a href="<?php echo U('Auth/setStatus',['id'=>$list['id'],'tableName'=>'Auth','status'=>0]);?>" class="ajax-status"><button type="button" class="btn btn-outline btn-danger btn-xs">禁用</button></a>
                                             <?php else: ?>
-                                            <?php echo (date("Y-m-d H:i:s",$authlist["create_time"])); endif; ?>
-                                    </td>
-                                    <td>
-                                        <?php if($authlist['status'] == 0): ?><a href="<?php echo U('Auth/setStatus',['id'=>$authlist['id'],'tableName'=>'Auth','status'=>1]);?>" class="ajax-status"><button type="button" class="btn btn-outline btn-danger btn-xs">禁用</button></a>
-                                            <?php else: ?>
-                                            <a href="<?php echo U('Auth/setStatus',['id'=>$authlist['id'],'tableName'=>'Auth','status'=>0]);?>" class="ajax-status"><button type="button" class="btn btn-outline btn-primary btn-xs">启用</button></a><?php endif; ?>
-                                        <a href="<?php echo U('Auth/editAuth',['id'=>$authlist['id']]);?>"><button type="button" class="btn btn-outline btn-default btn-xs">编辑</button></a>
-                                        <a href="<?php echo U('Auth/delete',['id'=>$authlist['id'],'tableName'=>'Auth']);?>" class="ajax-delete"><button type="button" class="btn btn-outline btn-warning btn-xs">删除</button></a>                                    </td>
+                                            <a href="<?php echo U('Auth/setStatus',['id'=>$list['id'],'tableName'=>'Auth','status'=>1]);?>" class="ajax-status"><button type="button" class="btn btn-outline btn-primary btn-xs">启用</button></a><?php endif; ?>
+                                        <a href="<?php echo U('Auth/editAuth',['id'=>$list['id']]);?>"><button type="button" class="btn btn-outline btn-default btn-xs">编辑</button></a>
+                                        <a href="<?php echo U('Auth/delete',['id'=>$list['id'],'tableName'=>'Auth']);?>" class="ajax-delete"><button type="button" class="btn btn-outline btn-warning btn-xs">删除</button></a>                                    </td>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                             </tbody>
                         </table>
