@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-12-20 17:22:54
+Date: 2017-12-21 14:12:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,6 +64,8 @@ CREATE TABLE `yr_auth_rule` (
   `type` tinyint(1) NOT NULL DEFAULT '1',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `condition` char(100) NOT NULL DEFAULT '',
+  `add_time` datetime DEFAULT NULL,
+  `last_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -71,12 +73,12 @@ CREATE TABLE `yr_auth_rule` (
 -- ----------------------------
 -- Records of yr_auth_rule
 -- ----------------------------
-INSERT INTO `yr_auth_rule` VALUES ('1', 'Admin/Index/index', '后台首页控制器', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('2', 'Admin/Index/main', '后台系统数据', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('3', 'Admin/User/index', '管理员列表', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/addUser', '添加管理员', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('5', 'Admin/Role/index', '角色管理', '1', '1', '');
-INSERT INTO `yr_auth_rule` VALUES ('6', 'Admin/Auth/index', '权限列表', '1', '1', '');
+INSERT INTO `yr_auth_rule` VALUES ('1', 'Admin/Index/index', '后台首页控制器', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('2', 'Admin/Index/main', '后台系统数据', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('3', 'Admin/User/index', '管理员列表', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('4', 'Admin/User/addUser', '添加管理员', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('5', 'Admin/Role/index', '角色管理', '1', '1', '', null, null);
+INSERT INTO `yr_auth_rule` VALUES ('6', 'Admin/Auth/index', '权限列表', '1', '1', '', null, null);
 
 -- ----------------------------
 -- Table structure for `yr_blog`
